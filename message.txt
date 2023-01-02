@@ -1,0 +1,159 @@
+BLM217
+
+PROGRAMLAMA LABORATUVARI – I
+
+GÜZ 2022 DÖNEMİ
+PROJE – II
+
+Taşıyıcı Veri Yapıları
+
+Projenin
+Amacı:
+
+Projenin ana amacı sıklıkla kullanılan veri yapılarının örnek
+kullanımlarının C++ dilinin standart kütüphanesinde bulunan
+taşıyıcı sınıflar kullanılarak gerçekleştirilmesi ve öğrencinin dilde
+yer alan bu sınıflara ve veri yapılarına aşinalık kazanmasıdır.
+
+Projenin
+Konusu:
+
+Veri yapılarının etkinlikleri kullanım durumlarına göre değişiklik
+gösterirler. Başa, sona veri ekleme, sıralanmış verilerde sıralamayı
+koruyacak şekilde veri ekleme veya silme, vb. işlemler farklı veri
+yapılarında farklı işlem sürelerine ve belleğe gereksinim duyarlar.
+
+Yine bu veri yapılarında arama ve sıralama yapmak için ihtiyaç
+duyulan bellek ve işlemci gereksinimi de değişmektedir.
+Bu projenin temel konusunu farklı veri türleri (tamsayı, reel sayı,
+metin ve kullanıcı tanımlı tip) için farklı taşıyıcı veri yapıları (dizi,
+vektör, liste, kuyruk ve yığın) kullanarak ekleme, silme, arama ve
+sıralama işlemlerinin gerçekleştirilmesi ve bu işlemlerin ne kadar
+işlemci süresine ihtiyaç duyduğunun gösterilmesidir.
+
+Proje
+Takvimi
+
+Proje konusunun açıklanması: 20.12.2022
+Proje ekiplerinin belirlenmesi: 23.12.2022
+Proje ara gönderimi: 06.01.2023
+Proje son gönderimi: 20.01.2023
+Proje sunumu: 23.01.2022
+
+Proje
+Kısıtları:
+
+Proje kapsamında C++ programlama dili kullanılmalıdır.
+Dosya işlemleri ve diğer işlemler için bu uygulamada 3. parti
+kütüphane kullanılamaz fakat standart kütüphanelerin kullanımı
+tamamen serbesttir.
+Proje ekipleri en az 2 en çok 3 kişiden oluşmalıdır. Öğrenciler kendi
+ekiplerini kendileri oluşturacaklardır.
+
+Proje
+Detayı:
+
+Proje ekinde 5 farklı veri türü (double, long int, int, string ve GPS
+(kullanıcı tanımlı)) için hazırlanmış csv dosyaları mevcuttur. Bu
+dosyalarda her satırda bir komut ve o komuta ait parametreler
+mevcuttur. Bu dosyalar okunmalı ve komutlar düzgün bir şekilde
+işlenebilmelidir [5 Puan].
+Dosyadaki komutlar:
+START_TIMER [5 Puan]: chrono kütüphanesi kullanılarak zaman
+ölçümü için saatin başlatılması gerektiğini ifade eder.
+STOP_TIMER [5 Puan]: chrono kütüphanesi kullanılarak zaman
+ölçümünün tamamlandığını belirtir. Ölçülen zaman nano saniye
+olarak ekrana yazdırılır.
+
+ADD_BACK [5 Puan]: Bu komut taşıyıcı veri yapısının sonuna bir
+eleman eklenmesi gerektiğini belirtir. Bu komuttan sonra ‘,’ ile
+ayrılmış şekilde eklenecek veri bulunmaktadır.
+ADD_FRONT [5 Puan]: Bu komut taşıyıcı veri yapısının başına bir
+eleman eklenmesi gerektiğini belirtir. Bu komuttan sonra ‘,’ ile
+ayrılmış şekilde eklenecek veri bulunmaktadır.
+PRINT_FIRST_N_ELEMENTS [5 Puan]: Veri yapısının tuttuğu ilk N
+adet elemanı yazdırır. Parametresi N değeridir. Eğer veri yapısında
+N adet veri yoksa mevcut elemanları yazdırır ve çıkar.
+PRINT_LAST_N_ELEMENTS [5 Puan]: Veri yapısının tuttuğu son N
+adet elemanı yazdırır. Parametresi N değeridir. Eğer veri yapısında
+N adet veri yoksa mevcut elemanları yazdırır ve çıkar.
+IF_EXISTS_REMOVE_FIRST [5 Puan]: Veri yapısında baştan
+başlayarak verilen bir değeri arar ve ilk bulduğu yerdeki değeri veri
+yapısından çıkartır ve sonlanır. Eğer elemanı bulamazsa bir işlem
+yapmaz.
+IF_EXISTS_REMOVE_LAST [5 Puan]: Veri yapısında sondan
+başlayarak verilen bir değeri arar ve ilk bulduğu yerdeki değeri veri
+yapısından çıkartır ve sonlanır. Eğer elemanı bulamazsa bir işlem
+yapmaz.
+CREATE_A_DEEP_CLONE [5 Puan]: Veri yapısının bir eşini
+oluşturur. Bu tam bir kopyadır ve ana veriler değişse bile buradaki
+veriler aynı kalır veya buradaki veriler her zaman sabit kalır ve
+değiştirilemez.
+SORT_ASCENDING_BY_USING_SELECTION_SORT [10 Puan]:
+Seçmeli sıralama algoritmasını kullanarak veri yapısını artan sırada
+sıralayınız. Sıralamada tam sayılar ve reel sayılar için değerleri
+doğrudan kullanınız. Metin sıralamada büyük/küçük harf duyarlılığı
+yoktur. GPS verilerinin sıralamasında elemanların 0.0, 0.0
+noktasına olan Öklid uzaklığı kullanılmalıdır. Bu sıralama
+algoritması yerine internette bulduğunuz veya standart
+kütüphanede var olan bir sıralama algoritmasını tercih
+
+edebilirsiniz. Bu durumda madde 5 puan üzerinden
+değerlendirilecektir.
+RESTORE_FROM_CLONE [5 Puan]: Orijinal veriyi kopyalanmış
+veriden geri yükleyin.
+SORT_DESCENDING_BY_USING_QUICK_SORT [10 Puan]: Hızlı
+sıralama algoritmasını kullanarak veri yapısını azalan sırada
+sıralayınız. Sıralamada tam sayılar ve reel sayılar için değerleri
+doğrudan kullanınız. Metin sıralamada büyük/küçük harf duyarlılığı
+yoktur. GPS verilerinin sıralamasında elemanların 0.0, 0.0
+noktasına olan Öklid uzaklığı kullanılmalıdır. Bu sıralama
+algoritması yerine internette bulduğunuz veya standart
+kütüphanede var olan bir sıralama algoritmasını tercih
+edebilirsiniz. Bu durumda madde 5 puan üzerinden
+değerlendirilecektir.
+ADD_ORDERED [5 Puan]: Parametre olarak belirtilen değeri veri
+yapısına sıralamayı bozmadan ekleyiniz.
+REMOVE_LAST_N_ITEMS [5 Puan]: Veri yapısının sonundaki N
+adet elemanı çıkartınız. Bu komutun parametresi N değeridir.
+REMOVE_FIRST_N_ITEMS [5 Puan]: Veri yapısının başındaki N
+adet elemanı çıkartınız. Bu komutun parametresi N değeridir.
+REMOVE_ALL_ITEMS [5 Puan]: Veri yapısında kalan tüm
+elemanları çıkartınız.
+REMOVE_CLONE [5 Puan]: Veri yapısının klonu varsa o klonu
+tamamen yok ediniz.
+C++ dilinin standart kütüphanesinde yer alan veri yapılarının bir
+listesine ve bu yapılar ile ilgili gerekli referans bilgilere
+https://en.cppreference.com/w/cpp/container adresinden
+erişebilirsiniz.
+Her madde 5 farklı veri yapısı [dizi, vektör, liste, kuyruk ve yığın]
+çalıştığında tam puan alır. Çalışmayan her bir veri yapısı için 1 puan
+kaybedilir.
+
+Proje
+Teslimi
+
+• Proje kapsamında geliştirilen yazılım GitHub üzerinde özel bir
+kod havuzu olarak tutulmalı ve geliştirme yapıldıkça kod havuzu
+güncellenmelidir. Projedeki gelişme kontrol edileceğinden en
+son gün toptan bir güncelleme kabul edilmeyecektir.
+• Proje raporu IEEE formatında ve 4 sayfa olmalıdır. Rapor
+Overleaf üzerinde oluşturulmalı ve dersin sorumlu asistanlarıyla
+paylaşılmalıdır.
+• Raporda algoritmalarınıza ait akış diyagramı veya sözde kodlar
+bulunmalıdır. Ayrıca, kullanılan yöntemlerde sizi zorlayan ve
+yeni öğrendiğini içermeli, özet, giriş, yöntem, deneysel sonuçlar,
+sonuç ve kaynakça bölümünden oluşmalıdır.
+
+https://tr.overleaf.com/latex/templates/ieee-conference-
+template/grfzhhncsfqn adresinden IEEE formatlı örnek metin
+
+yapısını bulabilirsiniz.
+• Proje ile ilgili sorularınızı eposta üzerinden Arş. Gör. Sümeyye
+Kaymak’a iletebilirsiniz.
+• Açıklanan takvimdeki tarihler kesindir. Bu tarihler
+uzatılmayacaktır ve ilgili tarihlerden sonra yapılan gönderimler
+kabul edilmeyecektir.
+• Proje sunumları sırasında proje ekibine rapor ve kod üzerinden
+sorular sorulacaktır. Proje ekibindeki her öğrenci sunum
+sonrasında farklı notlarla puanlanabilecektir.
