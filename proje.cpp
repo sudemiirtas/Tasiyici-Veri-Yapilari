@@ -293,11 +293,11 @@ int main() {
             std::transform(command.begin(), command.end(), command.begin(), ::toupper);//komutlari buyuk harfe cevirme
             std::string command_st;// komutlarin saklanmasi icin kullanilan string
 
-                /*Bu kod, "double.csv" dosyasindan okunan verileri islemek icin kullanilir.Kod, dosyadan satir satir okur ve okunan satirin basindaki komutu alir.
-                Komut, virgulle ayrilmis sekilde verilir ve komut, ilgili islemi gerceklestirmek icin kullanilir.ornegin,
-                "ADD_BACK" komutu tasiyici veri yapisinin sonuna bir eleman eklenmesi icin kullanilir.Bu komut,
-                virgulle ayrilmis sekilde eklenecek veriyi icerir.Eger komut gecerli bir komut degilse, "Invalid Command: [komut]" seklinde bir hata mesaji yazdirilir.
-                Bu kod, doubleVec adli bir vector kullanarak verileri saklar ve islemleri gerceklestirir.*/
+    //Bu kod, "double.csv" dosyasindan okunan verileri islemek icin kullanilir.Kod, dosyadan satir satir okur ve okunan satirin basindaki komutu alir.
+    //Komut, virgulle ayrilmis sekilde verilir ve komut, ilgili islemi gerceklestirmek icin kullanilir.ornegin,
+    //"ADD_BACK" komutu tasiyici veri yapisinin sonuna bir eleman eklenmesi icin kullanilir.Bu komut,
+    //virgulle ayrilmis sekilde eklenecek veriyi icerir.Eger komut gecerli bir komut degilse, "Invalid Command: [komut]" seklinde bir hata mesaji yazdirilir.
+    //Bu kod, doubleVec adli bir vector kullanarak verileri saklar ve islemleri gerceklestirir.
             
             
             
