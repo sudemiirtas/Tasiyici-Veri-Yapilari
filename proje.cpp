@@ -81,4 +81,10 @@ void print_first_n_elements_string(std::vector<std::string>& vec, int n) {
         std::cout << vec[i] << std::endl;
     }
 }
+//SELİN SELİME CAN 
 
+
+
+
+
+//İREM AKYALCIN
