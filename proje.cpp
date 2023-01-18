@@ -144,8 +144,68 @@ void print_last_n_elements_string(std::vector<std::string>& vec, int n) {
     }
 }
 
-//SELİN SELİME CAN 
-
+//SELİME SELİN CAN 
+//******* SORT_ASCENDING_BY_USING_SELECTION_SORT 
+//Bu kod, verilen bir double turunde vector icerisindeki elemanlari secim siralamasi yontemiyle kucukten buyuge siralar.
+//Oncelikle, dizinin boyutunun biraz kucugunden baslayarak dongu baslatilir.Bu dongu, dizinin ilk eleman�ndan baslayarak
+//dizinin sonuna kadar gecer ve her bir eleman icin en kucuk elemanin indeksini bulur.Dongu sonunda, en kucuk eleman ile
+//dizinin ilk elemani yer degistirir.Bu islem dizinin boyutunun biraz kucuge kadar tekrar eder ve dizinin tum elemanlari siralanir.
+void sort_ascending_using_selection_sort_double(std::vector<double>& vec)
+{
+    for (int i = 0; i < vec.size() - 1; i++)
+    {
+        int minIndex = i;
+        for (int j = i + 1; j < vec.size(); j++)
+        {
+            if (vec[j] < vec[minIndex])
+                minIndex = j;
+        }
+        std::swap(vec[minIndex], vec[i]);
+    }
+}
+void sort_ascending_using_selection_sort_int(std::vector<int>& vec) {
+    int minIndex, temp;
+    for (int i = 0; i < vec.size() - 1; i++) {
+        minIndex = i;
+        for (int j = i + 1; j < vec.size(); j++) {
+            if (vec[j] < vec[minIndex]) {
+                minIndex = j;
+            }
+        }
+        temp = vec[minIndex];
+        vec[minIndex] = vec[i];
+        vec[i] = temp;
+    }
+}
+void sort_ascending_using_selection_sort_longint(std::vector<long int>& vec) {
+    int minIndex, temp;
+    for (int i = 0; i < vec.size() - 1; i++) {
+        minIndex = i;
+        for (int j = i + 1; j < vec.size(); j++) {
+            if (vec[j] < vec[minIndex]) {
+                minIndex = j;
+            }
+        }
+        temp = vec[minIndex];
+        vec[minIndex] = vec[i];
+        vec[i] = temp;
+    }
+}
+void sort_ascending_using_selection_sort_string(std::vector<std::string>& vec) {
+    int minIndex;
+    std::string temp;
+    for (int i = 0; i < vec.size() - 1; i++) {
+        minIndex = i;
+        for (int j = i + 1; j < vec.size(); j++) {
+            if (vec[j].compare(vec[minIndex]) < 0) {
+                minIndex = j;
+            }
+        }
+        temp = vec[minIndex];
+        vec[minIndex] = vec[i];
+        vec[i] = temp;
+    }
+}
 
 
 
