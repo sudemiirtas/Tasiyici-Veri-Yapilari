@@ -88,3 +88,32 @@ void print_first_n_elements_string(std::vector<std::string>& vec, int n) {
 
 
 //İREM AKYALCIN
+
+//******* ADD_ORDERED
+//Bu kod, verilen bir degerin(value) vektorun(vec) icinde sirali olarak yerlesecegi yerde eklemesini saglar.
+//Bu islem icin lower_bound fonksiyonu kullanilir.lower_bound, verilen degerin vektorde gecerli olmasi durumunda, 
+//o degerin ilk olarak yer alacagi indisi dondurur.Bu indis, verilen degerin sirali olarak yerlesecegi yerdir ve 
+//insert fonksiyonu ile bu indise deger eklenir.Bu islem ile vektor sirali bir sekilde korunur.
+template<typename T>
+void add_ordered(std::vector<T>& vec, T value) {
+    auto it = std::lower_bound(vec.begin(), vec.end(), value);
+    vec.insert(it, value);
+}
+
+//******* REMOVE_LAST_N_ITEMS
+//Bu kod, verilen bir sayida son elemani verilen bir vektorden kaldirmak icin kullanilir.Ornegin, 
+//remove_last_n_items_double(myVec, 2) cagrisi, myVec vektorunun son iki elemanini siler.Bu, 
+//vec.erase(vec.end() - n, vec.end()) satiri tarafindan gerceklestirilir, bu satir, vec vektorunun 
+//son n elemanini vec.end() iteraturune kadar siler.
+void remove_last_n_items_double(std::vector<double>& vec, int n) {
+    vec.erase(vec.end() - n, vec.end());
+}
+void remove_last_n_items_int(std::vector<int>& vec, int n) {
+    vec.erase(vec.end() - n, vec.end());
+}
+void remove_last_n_items_longint(std::vector<long int>& vec, int n) {
+    vec.erase(vec.end() - n, vec.end());
+}
+void remove_last_n_items_string(std::vector<std::string>& vec, int n) {
+    vec.erase(vec.end() - n, vec.end());
+}
