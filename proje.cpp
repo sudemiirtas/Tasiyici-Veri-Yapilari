@@ -260,3 +260,47 @@ void remove_last_n_items_longint(std::vector<long int>& vec, int n) {
 void remove_last_n_items_string(std::vector<std::string>& vec, int n) {
     vec.erase(vec.end() - n, vec.end());
 }
+
+
+//MAİN
+int main() {
+    std::vector<double> doubleVec; // burada double veri turunu sakladigimiz bir vektor tanimliyoruz
+    std::vector<long int> longIntVec; // burada long int veri turunu sakladigimiz bir vektor tanimliyoruz
+    std::vector<int> intVec; // burada int veri turunu sakladigimiz bir vektor tanimliyoruz
+    std::vector<std::string> stringVec; // burada string veri turunu sakladigmiz bir vektor tanimliyoruz
+    std::vector<GPS> GPSVec; // burada GPS veri turunu sakladigimiz bir vektor tanimliyoruz
+
+    std::string files[] = { "double.csv", "longInt.csv", "integer.csv", "string.csv", "GPS.csv" };// okunacak dosyalarin isimleri
+    std::string file_path = "files/";// dosyalarin yolu
+    std::string line;// okunan satirlari saklamak icin kullanilan string
+
+    for (const std::string& file : files)// dosyalari tek tek okuma icin dongu
+    {
+        std::ifstream ifs(file_path + file);// okunacak dosya
+        if (!ifs.good()) { // dosya asilamazsa hata ver
+            std::cout << "Error: file " << file << " not found" << std::endl;
+        }
+        else {
+
+            std::cout << "" << std::endl;
+            std::cout << "" << std::endl;
+            std::cout << "Reading file: " << file_path + file << std::endl;
+            std::cout << "{" << std::endl;
+
+            std::string command;// okunan komutlar
+            std::stringstream ssin(line);// okunan komutlarin streami
+            std::getline(ssin, command, ',');// komutlarin virgul ile ayrilmasi
+            std::transform(command.begin(), command.end(), command.begin(), ::toupper);//komutlari buyuk harfe cevirme
+            std::string command_st;// komutlarin saklanmasi icin kullanilan string
+
+                /*Bu kod, "double.csv" dosyasindan okunan verileri islemek icin kullanilir.Kod, dosyadan satir satir okur ve okunan satirin basindaki komutu alir.
+                Komut, virgulle ayrilmis sekilde verilir ve komut, ilgili islemi gerceklestirmek icin kullanilir.ornegin,
+                "ADD_BACK" komutu tasiyici veri yapisinin sonuna bir eleman eklenmesi icin kullanilir.Bu komut,
+                virgulle ayrilmis sekilde eklenecek veriyi icerir.Eger komut gecerli bir komut degilse, "Invalid Command: [komut]" seklinde bir hata mesaji yazdirilir.
+                Bu kod, doubleVec adli bir vector kullanarak verileri saklar ve islemleri gerceklestirir.*/
+            
+            
+            
+            
+        }
+            }
