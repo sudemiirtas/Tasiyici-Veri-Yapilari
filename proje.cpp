@@ -147,7 +147,7 @@ void print_last_n_elements_string(std::vector<std::string>& vec, int n) {
 //SELİME SELİN CAN 
 //******* SORT_ASCENDING_BY_USING_SELECTION_SORT 
 //Bu kod, verilen bir double turunde vector icerisindeki elemanlari secim siralamasi yontemiyle kucukten buyuge siralar.
-//Oncelikle, dizinin boyutunun biraz kucugunden baslayarak dongu baslatilir.Bu dongu, dizinin ilk eleman�ndan baslayarak
+//Oncelikle, dizinin boyutunun biraz kucugunden baslayarak dongu baslatilir.Bu dongu, dizinin ilk elemanindan baslayarak
 //dizinin sonuna kadar gecer ve her bir eleman icin en kucuk elemanin indeksini bulur.Dongu sonunda, en kucuk eleman ile
 //dizinin ilk elemani yer degistirir.Bu islem dizinin boyutunun biraz kucuge kadar tekrar eder ve dizinin tum elemanlari siralanir.
 void sort_ascending_using_selection_sort_double(std::vector<double>& vec)
