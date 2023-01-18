@@ -6,7 +6,7 @@
 #include <sstream>
 #include <chrono>
 #include <vector>
-
+//SUDE DEMİRTAŞ
 class GPS {
 public:
     double latitude;
@@ -43,7 +43,7 @@ std::vector<int> deepCloneVec_int;
 std::vector<long int> deepCloneVec_longint;
 std::vector<std::string> deepCloneVec_string;
 std::vector<GPS> deepCloneVec_gps;
-
+//İCLAL CENGEL 
 //******* PRINT_FIRST_N_ELEMENTS
 //Bu kod, bir double tipinde vector nesnesinin ilk n elemanini yazdirmak icin kullanilir.ilk olarak, 
 //eger vec nesnesinin boyutu n'den kucukse, yazdirilacak eleman sayisini vec nesnesinin boyutuna esitler. 
