@@ -206,6 +206,26 @@ void sort_ascending_using_selection_sort_string(std::vector<std::string>& vec) {
         vec[i] = temp;
     }
 }
+//******* RESTORE_FROM_CLONE
+//Bu kod, deepCloneVec_double adli vektorden vec adli vektorun icerigini geri yukler.
+//Bu, vec vektorunun iceriginin deepCloneVec_double vektorune olan kopyasini almasi anlamina gelir.
+//Bu fonksiyon, vec vektorunun icerigini degistirmek icin kullanilabilir ve eski icerigini geri yuklemek icin kullanilabilir.
+void restore_from_clone_double(std::vector<double>& vec)
+{
+    vec = deepCloneVec_double;
+}
+void restore_from_clone_int(std::vector<int>& vec)
+{
+    vec = deepCloneVec_int;
+}
+void restore_from_clone_longint(std::vector<long int>& vec)
+{
+    vec = deepCloneVec_longint;
+}
+void restore_from_clone_string(std::vector<std::string>& vec)
+{
+    vec = deepCloneVec_string;
+}
 
 
 
