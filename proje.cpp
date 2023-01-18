@@ -81,6 +81,69 @@ void print_first_n_elements_string(std::vector<std::string>& vec, int n) {
         std::cout << vec[i] << std::endl;
     }
 }
+//******* PRINT_LAST_N_ELEMENTS
+//bu kod, bir double veri tipi tasiyicisi olan bir vektorun son n elemanini yazdirir.
+//Eger vektorun boyutu n'den kucukse, tum vektor elemanlari yazdirilir ve vektor temizlenir. 
+//Eger vektorun boyutu n'den buyukse, son n eleman yazdirilir ve son n eleman vektorden silinir.
+void print_last_n_elements_double(std::vector<double>& vec, int n) {
+    if (vec.size() < n) {
+        for (auto& i : vec) {
+            std::cout << i << std::endl;
+        }
+        vec.clear();
+    }
+    else {
+        for (int i = vec.size() - n; i < vec.size(); i++) {
+            std::cout << vec[i] << std::endl;
+        }
+        vec.erase(vec.end() - n, vec.end());
+    }
+}
+void print_last_n_elements_int(std::vector<int>& vec, int n) {
+    if (vec.size() < n) {
+        for (int i : vec) {
+            std::cout << i << " ";
+        }
+        vec.clear();
+    }
+    else {
+        for (int i = vec.size() - n; i < vec.size(); i++) {
+            std::cout << vec[i] << " ";
+        }
+        vec.erase(vec.end() - n, vec.end());
+    }
+    std::cout << std::endl;
+}
+void print_last_n_elements_longint(std::vector<long int>& vec, int n) {
+    int size = vec.size();
+    if (n > size) {
+        for (int i = 0; i < size; i++) {
+            std::cout << vec[i] << std::endl;
+        }
+        vec.clear();
+    }
+    else {
+        for (int i = size - n; i < size; i++) {
+            std::cout << vec[i] << std::endl;
+        }
+        vec.erase(vec.begin() + size - n, vec.end());
+    }
+}
+void print_last_n_elements_string(std::vector<std::string>& vec, int n) {
+    if (vec.size() < n) {
+        for (auto s : vec) {
+            std::cout << s << std::endl;
+        }
+        vec.clear();
+    }
+    else {
+        for (int i = vec.size() - n; i < vec.size(); i++) {
+            std::cout << vec[i] << std::endl;
+        }
+        vec.erase(vec.end() - n, vec.end());
+    }
+}
+
 //SELİN SELİME CAN 
 
 
