@@ -43,3 +43,42 @@ std::vector<int> deepCloneVec_int;
 std::vector<long int> deepCloneVec_longint;
 std::vector<std::string> deepCloneVec_string;
 std::vector<GPS> deepCloneVec_gps;
+
+//******* PRINT_FIRST_N_ELEMENTS
+//Bu kod, bir double tipinde vector nesnesinin ilk n elemanini yazdirmak icin kullanilir.ilk olarak, 
+//eger vec nesnesinin boyutu n'den kucukse, yazdirilacak eleman sayisini vec nesnesinin boyutuna esitler. 
+//Daha sonra, for dongusu kullanilarak vec nesnesinin ilk n elemani yazdirilir.
+void print_first_n_elements_double(std::vector<double>& vec, int n) {
+    if (vec.size() < n) {
+        n = vec.size();
+    }
+    for (int i = 0; i < n; i++) {
+        std::cout << vec[i] << std::endl;
+    }
+}
+void print_first_n_elements_int(std::vector<int>& vec, int n) {
+    if (n > vec.size()) {
+        n = vec.size();
+    }
+    for (int i = 0; i < n; i++) {
+        std::cout << vec[i] << " ";
+    }
+    std::cout << std::endl;
+}
+void print_first_n_elements_longint(std::vector<long int>& vec, int n) {
+    if (n > vec.size()) {
+        n = vec.size();
+    }
+    for (int i = 0; i < n; i++) {
+        std::cout << vec[i] << std::endl;
+    }
+}
+void print_first_n_elements_string(std::vector<std::string>& vec, int n) {
+    if (vec.size() < n) {
+        n = vec.size();
+    }
+    for (int i = 0; i < n; i++) {
+        std::cout << vec[i] << std::endl;
+    }
+}
+
