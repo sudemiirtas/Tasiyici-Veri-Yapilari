@@ -230,7 +230,7 @@ void restore_from_clone_string(std::vector<std::string>& vec)
 
 
 
-//İREM AKYALCIN
+//ZEYNEP İREM AKYALCIN
 
 //******* ADD_ORDERED
 //Bu kod, verilen bir degerin(value) vektorun(vec) icinde sirali olarak yerlesecegi yerde eklemesini saglar.
@@ -259,6 +259,57 @@ void remove_last_n_items_longint(std::vector<long int>& vec, int n) {
 }
 void remove_last_n_items_string(std::vector<std::string>& vec, int n) {
     vec.erase(vec.end() - n, vec.end());
+}
+
+//******* REMOVE_FIRST_N_ITEMS
+//remove_first_n_items_double fonksiyonu, verilen bir vektorun basindan verilen bir sayida elemani siler.
+//Ornegin, vec vektorunun ilk 3 elemanini silmek icin remove_first_n_items_double(vec, 3) fonksiyonu kullanilabilir.
+//Bu fonksiyon, vektorun basindan verilen n sayida elemanini silmek icin vektorun erase() metodunu kullanir.
+void remove_first_n_items_double(std::vector<double>& vec, int n) {
+    vec.erase(vec.begin(), vec.begin() + n);
+}
+void remove_first_n_items_int(std::vector<int>& vec, int n) {
+    vec.erase(vec.begin(), vec.begin() + n);
+}
+void remove_first_n_items_longint(std::vector<long int>& vec, int n) {
+    vec.erase(vec.begin(), vec.begin() + n);
+}
+void remove_first_n_items_string(std::vector<std::string>& vec, int n) {
+    vec.erase(vec.begin(), vec.begin() + n);
+}
+
+//******* REMOVE_ALL_ITEMS
+//Bu kod, verilen double veri tipinde bir vektorun ilerisini tamamen siler.
+//Bu islemi gerceklestirmek icin std::vector sinifinin clear() fonksiyonu kullanilmistir.Bu fonksiyon, 
+//vektorun icerigini sifirlar ve boyutunu 0'a esitler. Bu sayede vektor icinde hicbir eleman kalmaz ve 
+//yeni elemanlar eklemek icin bos bir alan olusur.
+void remove_all_items_double(std::vector<double>& vec) {
+    vec.clear();
+}
+void remove_all_items_int(std::vector<int>& vec) {
+    vec.clear();
+}
+void remove_all_items_longint(std::vector<long int>& vec) {
+    vec.clear();
+}
+void remove_all_items_string(std::vector<std::string>& vec) {
+    vec.clear();
+}
+
+//******* REMOVE_CLONE
+//remove_clone_double() fonksiyonu, verilen double tipindeki vektorun deepCloneVec_double adli klonunu temizler.
+//Bu, asil vektoru etkilemez ancak klonun icerigi silinir.Bu, klonun daha sonra geri yuklenemeyebilecegi anlamina gelir.
+void remove_clone_double(std::vector<double>& vec) {
+    vec.clear();
+}
+void remove_clone_int(std::vector<int>& vec) {
+    vec.clear();
+}
+void remove_clone_longint(std::vector<long int>& vec) {
+    vec.clear();
+}
+void remove_clone_string(std::vector<std::string>& vec) {
+    vec.clear();
 }
 
 
