@@ -161,6 +161,88 @@ void print_last_n_elements_string(std::vector<std::string>& vec, int n) {
     }
 }
 
+//******* IF_EXISTS_REMOVE_FIRST
+//Bu kod, verilen bir degerin tasiyici veri yapisinin ilk ocurrence'ini arar ve eger bulursa, o elemani tasiyici veri yapisindan kaldirir. 
+//Bu islem std::find fonksiyonu kullanilarak gerceklestirilir. Eger aranan deger tasiyici veri yapisinda bulunursa, 
+//std::find fonksiyonu o degerin pozisyonunu dondurur ve vec.erase(it) komutu ile o eleman tasiyici veri yapisindan silinir. 
+//Eger aranan deger tasiyici veri yapisinda bulunmazsa, std::find fonksiyonu vec.end() dondurur ve hicbir islem yapilmaz.
+void if_exists_remove_first_double(std::vector<double>& vec, double value) {
+    auto it = std::find(vec.begin(), vec.end(), value);
+    if (it != vec.end()) {
+        vec.erase(it);
+    }
+}
+void if_exists_remove_first_int(std::vector<int>& vec, int value)
+{
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+    {
+        if (*it == value)
+        {
+            vec.erase(it);
+            break;
+        }
+    }
+}
+void if_exists_remove_first_longint(std::vector<long int>& vec, long int value) {
+    auto it = std::find(vec.begin(), vec.end(), value);
+    if (it != vec.end()) {
+        vec.erase(it);
+    }
+}
+void if_exists_remove_first_string(std::vector<std::string>& vec, std::string value) {
+    auto it = std::find(vec.begin(), vec.end(), value);
+    if (it != vec.end()) {
+        vec.erase(it);
+    }
+}
+
+//******* IF_EXISTS_REMOVE_LAST
+//Bu kod, verilen degerin tasiyici veri yapisinda(vector) son ocurrensini arar ve eger bulursa ocurrensi siler.Bu islem, 
+//vector icinde arama yaparken tersten dolasarak gerceklestirilir.Bu sayede vector icinde son ocurrens bulunur ve silinir.
+void if_exists_remove_last_double(std::vector<double>& vec, double value) {
+    for (int i = vec.size() - 1; i >= 0; i--) {
+        if (vec[i] == value) {
+            vec.erase(vec.begin() + i);
+            break;
+        }
+    }
+}
+void if_exists_remove_last_int(std::vector<int>& vec, int value) {
+    for (int i = vec.size() - 1; i >= 0; i--) {
+        if (vec[i] == value) {
+            vec.erase(vec.begin() + i);
+            break;
+        }
+    }
+}
+void if_exists_remove_last_longint(std::vector<long int>& vec, long int value) {
+    for (int i = vec.size() - 1; i >= 0; i--) {
+        if (vec[i] == value) {
+            vec.erase(vec.begin() + i);
+            break;
+        }
+    }
+}
+void if_exists_remove_last_string(std::vector<std::string>& vec, std::string value) {
+    for (int i = vec.size() - 1; i >= 0; i--) {
+        if (vec[i] == value) {
+            vec.erase(vec.begin() + i);
+            break;
+        }
+    }
+}
+
+//******* CREATE_A_DEEP_CLONE
+//Bu kod, bir vector verisini klonlamak icin bir fonksiyon tanimlar.
+//Bu fonksiyon, bir referans olarak verilen vector'un kopyasini dondurur. 
+//Bu, "deep copy" olarak adlandirilan, orjinal ve klon arasinda herhangi bir baglanti olmamasi anlamina gelir. 
+//Bu, orjinal verinin degistirilmesinden etkilenmemesini saglar. Bu fonksiyon "template" olarak yazilmistir, bu yuzden herhangi bir veri tipi ile kullanilabilir.
+template <typename T>
+std::vector<T> create_a_deep_clone(const std::vector<T>& vec) {
+    return vec;
+}
+
+
 //SELİME SELİN CAN 
 //******* SORT_ASCENDING_BY_USING_SELECTION_SORT 
 //Bu kod, verilen bir double turunde vector icerisindeki elemanlari secim siralamasi yontemiyle kucukten buyuge siralar.
