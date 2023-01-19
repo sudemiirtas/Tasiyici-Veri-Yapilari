@@ -43,6 +43,23 @@ std::vector<int> deepCloneVec_int;
 std::vector<long int> deepCloneVec_longint;
 std::vector<std::string> deepCloneVec_string;
 std::vector<GPS> deepCloneVec_gps;
+
+//******* ADD_BACK
+//Bu fonksiyon, verilen 'vec' adki double turunde bir vektor ve 'value' adki degiskenin degerini alir. 
+//'vec.push_back(value)' komutu ile 'vec' vektorunun sonuna 'value' degerini ekler.
+//Bu sayede verilen 'value' degerinin vektorun sonuna eklenmis olmasi saglanmis olur.
+void add_back_double(std::vector<double>& vec, double value) {
+    vec.push_back(value);
+}
+void add_back_int(std::vector<int>& vec, int value) {
+    vec.push_back(value);
+}
+void add_back_longint(std::vector<long int>& vec, long int value) {
+    vec.push_back(value);
+}
+void add_back_string(std::vector<std::string>& vec, std::string value) {
+    vec.push_back(value);
+}
 //İCLAL CENGEL 
 //******* PRINT_FIRST_N_ELEMENTS
 //Bu kod, bir double tipinde vector nesnesinin ilk n elemanini yazdirmak icin kullanilir.ilk olarak, 
