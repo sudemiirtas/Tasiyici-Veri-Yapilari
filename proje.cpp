@@ -326,7 +326,23 @@ void restore_from_clone_string(std::vector<std::string>& vec)
     vec = deepCloneVec_string;
 }
 
-
+//******* SORT_DESCENDING_BY_USING_QUICK_SORT
+//Bu kod, verilen double tipindeki vektorun icerigini hizli siralama algoritmasi kullanarak azalan sirada siralar.
+//std::sort() fonksiyonu kullanilmistir ve bu fonksiyon, verilen iterator araligindaki elemanlari siralamak icin kullanilir.
+//std::greater<double>() ise siralama islemi sirasinda kullanilacak olan kiyaslama fonksiyonudur ve
+//bu fonksiyon double veri turunde kiyaslama yaparken buyukten kucuge dogru siralama yapmasini saglar.
+void sort_descending_by_using_quick_sort_double(std::vector<double>& vec) {
+    std::sort(vec.begin(), vec.end(), std::greater<double>());
+}
+void sort_descending_by_using_quick_sort_int(std::vector<int>& vec) {
+    std::sort(vec.begin(), vec.end(), std::greater<int>());
+}
+void sort_descending_by_using_quick_sort_longint(std::vector<long int>& vec) {
+    std::sort(vec.begin(), vec.end(), std::greater<long int>());
+}
+void sort_descending_by_using_quick_sort_string(std::vector<std::string>& vec) {
+    //std::sort(vec.begin(), vec.end(), std::greaterstd::string());
+}
 
 
 //ZEYNEP İREM AKYALCIN
@@ -448,9 +464,393 @@ int main() {
     //"ADD_BACK" komutu tasiyici veri yapisinin sonuna bir eleman eklenmesi icin kullanilir.Bu komut,
     //virgulle ayrilmis sekilde eklenecek veriyi icerir.Eger komut gecerli bir komut degilse, "Invalid Command: [komut]" seklinde bir hata mesaji yazdirilir.
     //Bu kod, doubleVec adli bir vector kullanarak verileri saklar ve islemleri gerceklestirir.
-            
-            
-            
-            
-        }
+      
+             if (file == "double.csv")
+            {
+                while (std::getline(ifs, line))
+                {
+                    std::string command;
+                    std::stringstream ssin(line); 
+                    std::getline(ssin, command, ','); // CSV dosyasindaki satirdaki ilk veriyi ',' ile ayirarak command degiskenine atar
+                    std::transform(command.begin(), command.end(), command.begin(), ::toupper);// Command degiskenini buyukk harfe cevirir
+                    double value;
+                    char comma;
+                    ssin >> comma >> value;// CSV dosyasindaki satirdaki ikinci veriyi value degiskenine atar
+                    doubleVec.push_back(value);
+                    // "value" degiskeni doubleVec adli vektorun sonuna ekleniyor. Bu islem push_back metodu ile gerceklestiriliyor. Bu metodun amaci tasiyici veri yapisinin onune eleman eklemektir.
+
+                    if (command_st != command) {
+                        command_st = command;
+                        std::cout << "Command: " << command << std::endl;
+                    }
+
+                    if (command == "START_TIMER") {
+
+                        start_timer();
+                    }
+                    else if (command == "STOP_TIMER") {
+
+                        stop_timer();
+                        std::cout << "" << std::endl;
+                        std::cout << "" << std::endl;
+
+                    }
+                    else if (command == "ADD_BACK") {
+
+                        add_back_double(doubleVec, value);
+                    }
+
+                    else if (command == "ADD_FRONT") {
+
+                        add_front_double(doubleVec, value);
+                    }
+                    else if (command == "PRINT_FIRST_N_ELEMENTS") {
+
+                        print_first_n_elements_double(doubleVec, value);
+                    }
+                    else if (command == "PRINT_LAST_N_ELEMENTS") {
+
+                        print_last_n_elements_double(doubleVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_FIRST") {
+
+                        if_exists_remove_first_double(doubleVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_LAST") {
+
+                        if_exists_remove_last_double(doubleVec, value);
+                    }
+                    else if (command == "CREATE_A_DEEP_CLONE") {
+
+                        deepCloneVec_double = create_a_deep_clone(doubleVec);
+                    }
+                    else if (command == "SORT_ASCENDING_BY_USING_SELECTION_SORT") {
+
+                        sort_ascending_using_selection_sort_double(doubleVec);
+                    }
+                    else if (command == "RESTORE_FROM_CLONE") {
+
+                        restore_from_clone_double(doubleVec);
+                    }
+                    else if (command == "sort_descending_by_usning_quick_sort_double") {
+
+                        sort_descending_by_using_quick_sort_double(doubleVec);
+                    }
+                    else if (command == "ADD_ORDERED") {
+
+                        add_ordered(doubleVec, value);
+                    }
+                    else if (command == "REMOVE_LAST_N_ITEMS") {
+
+                        remove_last_n_items_double(doubleVec, value);
+                    }
+                    else if (command == "REMOVE_FIRST_N_ITEMS") {
+
+                        remove_first_n_items_double(doubleVec, value);
+                    }
+                    else if (command == "REMOVE_ALL_ITEMS") {
+
+                        remove_all_items_double(doubleVec);
+                    }
+                    else if (command == "REMOVE_CLONE") {
+
+                        remove_clone_double(doubleVec);
+                    }
+                    else {
+                        std::cout << "Invalid Command: " << command << std::endl;
+
+                    }
+                }
             }
+            else if (file == "integer.csv")
+            {
+                while (std::getline(ifs, line))
+                {
+                    std::string command;
+                    std::stringstream ssin(line);
+                    std::getline(ssin, command, ',');
+                    std::transform(command.begin(), command.end(), command.begin(), ::toupper);
+                    int value;
+                    char comma;
+                    ssin >> comma >> value;
+                    intVec.push_back(value);
+
+                    if (command_st != command) {
+                        command_st = command;
+                        std::cout << "Command: " << command << std::endl;
+                    }
+
+                    if (command == "START_TIMER") {
+
+                        start_timer();
+                    }
+                    else if (command == "STOP_TIMER") {
+
+                        stop_timer();
+                        std::cout << "" << std::endl;
+                        std::cout << "" << std::endl;
+
+                    }
+                    else if (command == "ADD_BACK") {
+
+                        add_back_int(intVec, value);
+                    }
+
+                    else if (command == "ADD_FRONT") {
+
+                        add_front_int(intVec, value);
+                    }
+                    else if (command == "PRINT_FIRST_N_ELEMENTS") {
+
+                        print_first_n_elements_int(intVec, value);
+                    }
+                    else if (command == "PRINT_LAST_N_ELEMENTS") {
+
+                        print_last_n_elements_int(intVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_FIRST") {
+
+                        if_exists_remove_first_int(intVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_LAST") {
+
+                        if_exists_remove_last_int(intVec, value);
+                    }
+                    else if (command == "CREATE_A_DEEP_CLONE") {
+
+                        deepCloneVec_int = create_a_deep_clone(intVec);
+                    }
+                    else if (command == "SORT_ASCENDING_BY_USING_SELECTION_SORT") {
+
+                        sort_ascending_using_selection_sort_int(intVec);
+                    }
+                    else if (command == "RESTORE_FROM_CLONE") {
+
+                        restore_from_clone_int(intVec);
+                    }
+                    else if (command == "sort_descending_by_usning_quick_sort") {
+
+                        sort_descending_by_using_quick_sort_int(intVec);
+                    }
+                    else if (command == "ADD_ORDERED") {
+
+                        add_ordered(intVec, value);
+                    }
+                    else if (command == "REMOVE_LAST_N_ITEMS") {
+
+                        remove_last_n_items_int(intVec, value);
+                    }
+                    else if (command == "REMOVE_FIRST_N_ITEMS") {
+
+                        remove_first_n_items_int(intVec, value);
+                    }
+                    else if (command == "REMOVE_ALL_ITEMS") {
+
+                    }
+                }
+
+            }
+            else if (file == "longInt.csv")
+            {
+                while (std::getline(ifs, line))
+                {
+                    std::string command;
+                    std::stringstream ssin(line);
+                    std::getline(ssin, command, ',');
+                    std::transform(command.begin(), command.end(), command.begin(), ::toupper);
+                    long int value;
+                    char comma;
+                    ssin >> comma >> value;
+                    longIntVec.push_back(value);
+
+                    if (command_st != command) {
+                        command_st = command;
+                        std::cout << "Command: " << command << std::endl;
+                    }
+
+                    if (command == "START_TIMER") {
+
+                        start_timer();
+                    }
+                    else if (command == "STOP_TIMER") {
+
+                        stop_timer();
+                        std::cout << "" << std::endl;
+                        std::cout << "" << std::endl;
+
+                    }
+                    else if (command == "ADD_BACK") {
+
+                        add_back_longint(longIntVec, value);
+                    }
+
+                    else if (command == "ADD_FRONT") {
+
+                        add_front_longint(longIntVec, value);
+                    }
+                    else if (command == "PRINT_FIRST_N_ELEMENTS") {
+
+                        print_first_n_elements_longint(longIntVec, value);
+                    }
+                    else if (command == "PRINT_LAST_N_ELEMENTS") {
+
+                        print_last_n_elements_longint(longIntVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_FIRST") {
+
+                        if_exists_remove_first_longint(longIntVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_LAST") {
+
+                        if_exists_remove_last_longint(longIntVec, value);
+                    }
+                    else if (command == "CREATE_A_DEEP_CLONE") {
+
+                        deepCloneVec_longint = create_a_deep_clone(longIntVec);
+                    }
+                    else if (command == "SORT_ASCENDING_BY_USING_SELECTION_SORT") {
+
+                        sort_ascending_using_selection_sort_longint(longIntVec);
+                    }
+                    else if (command == "RESTORE_FROM_CLONE") {
+
+                        restore_from_clone_longint(longIntVec);
+                    }
+                    else if (command == "sort_descending_by_usning_quick_sort_double") {
+
+                        sort_descending_by_using_quick_sort_longint(longIntVec);
+                    }
+                    else if (command == "ADD_ORDERED") {
+
+                        add_ordered(longIntVec, value);
+                    }
+                    else if (command == "REMOVE_LAST_N_ITEMS") {
+
+                        remove_last_n_items_longint(longIntVec, value);
+                    }
+                    else if (command == "REMOVE_FIRST_N_ITEMS") {
+
+                        remove_first_n_items_longint(longIntVec, value);
+                    }
+                    else if (command == "REMOVE_ALL_ITEMS") {
+
+                        remove_all_items_longint(longIntVec);
+                    }
+                    else if (command == "REMOVE_CLONE") {
+
+                        remove_clone_longint(longIntVec);
+                    }
+                    else {
+                        std::cout << "Invalid Command: " << command << std::endl;
+
+                    }
+                }
+
+            }
+            else if (file == "string.csv")
+            {
+                while (std::getline(ifs, line))
+                {
+                    std::string command;
+                    std::stringstream ssin(line);
+                    std::getline(ssin, command, ',');
+                    std::transform(command.begin(), command.end(), command.begin(), ::toupper);
+                    std::string value;
+                    char comma;
+                    ssin >> comma >> value;
+                    stringVec.push_back(value);
+
+                    if (command_st != command) {
+                        command_st = command;
+                        std::cout << "Command: " << command << std::endl;
+                    }
+
+                    if (command == "START_TIMER") {
+
+                        start_timer();
+                    }
+                    else if (command == "STOP_TIMER") {
+
+                        stop_timer();
+                        std::cout << "" << std::endl;
+                        std::cout << "" << std::endl;
+
+                    }
+                    else if (command == "ADD_BACK") {
+
+                        add_back_string(stringVec, value);
+                    }
+
+                    else if (command == "ADD_FRONT") {
+
+                        add_front_string(stringVec, value);
+                    }
+                    else if (command == "PRINT_FIRST_N_ELEMENTS") {
+
+                        print_first_n_elements_string(stringVec, std::stoi(value));
+                    }
+                    else if (command == "PRINT_LAST_N_ELEMENTS") {
+
+                        print_last_n_elements_string(stringVec, std::stoi(value));
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_FIRST") {
+
+                        if_exists_remove_first_string(stringVec, value);
+                    }
+                    else if (command == "IF_EXISTS_REMOVE_LAST") {
+
+                        if_exists_remove_last_string(stringVec, value);
+                    }
+                    else if (command == "CREATE_A_DEEP_CLONE") {
+
+                        deepCloneVec_string = create_a_deep_clone(stringVec);
+                    }
+                    else if (command == "SORT_ASCENDING_BY_USING_SELECTION_SORT") {
+
+                        sort_ascending_using_selection_sort_string(stringVec);
+                    }
+                    else if (command == "RESTORE_FROM_CLONE") {
+
+                        restore_from_clone_string(stringVec);
+                    }
+                    else if (command == "sort_descending_by_usning_quick_sort_double") {
+
+                        sort_descending_by_using_quick_sort_string(stringVec);
+                    }
+                    else if (command == "ADD_ORDERED") {
+
+                        add_ordered(stringVec, value);
+                    }
+                    else if (command == "REMOVE_LAST_N_ITEMS") {
+
+                        remove_last_n_items_string(stringVec, std::stoi(value));
+                    }
+                    else if (command == "REMOVE_FIRST_N_ITEMS") {
+
+                        remove_first_n_items_string(stringVec, std::stoi(value));
+                    }
+                    else if (command == "REMOVE_ALL_ITEMS") {
+
+                        remove_all_items_string(stringVec);
+                    }
+                    else if (command == "REMOVE_CLONE") {
+
+                        remove_clone_string(stringVec);
+                    }
+                    else {
+                        std::cout << "Invalid Command: " << command << std::endl;
+
+                    }
+                }
+
+
+            }
+            else if (file == "GPS.csv")
+            {
+
+            }
+            std::cout << "}" << std::endl;
+        }
+    }
+}
+
