@@ -60,6 +60,22 @@ void add_back_longint(std::vector<long int>& vec, long int value) {
 void add_back_string(std::vector<std::string>& vec, std::string value) {
     vec.push_back(value);
 }
+//******* ADD_FRONT
+//"add_front_double" fonksiyonu, verilen double turunde bir degerin tasiyicinin veri yapisinin basina eklenmesini saglar.
+//Bu islem icin "insert" fonksiyonu kullanilmistidir. "vec.begin()" ile tasiyicinin veri yapisinin bagi belirlenir ve "value" degeri bu konuma eklenir.
+//Bu sekilde tasiyicinin veri yapisinin basina yeni bir eleman eklenmis olur.
+void add_front_double(std::vector<double>& vec, double value) {
+    vec.insert(vec.begin(), value);
+}
+void add_front_int(std::vector<int>& vec, int value) {
+    vec.insert(vec.begin(), value);
+}
+void add_front_string(std::vector<std::string>& vec, std::string value) {
+    vec.insert(vec.begin(), value);
+}
+void add_front_longint(std::vector<long int>& vec, long int value) {
+    vec.insert(vec.begin(), value);
+}
 //İCLAL CENGEL 
 //******* PRINT_FIRST_N_ELEMENTS
 //Bu kod, bir double tipinde vector nesnesinin ilk n elemanini yazdirmak icin kullanilir.ilk olarak, 
