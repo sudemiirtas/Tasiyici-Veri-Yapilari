@@ -9,8 +9,8 @@
 //SUDE DEMİRTAŞ
 class GPS {
 public:
-    double latitude;
-    double longitude;
+    double latitude; //enlem 
+    double longitude; //boylam
     std::string location_name;
 };
  
